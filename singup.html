@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sing up Page</title>
+        <link rel="stylesheet" href="../shared/normalize.css">
+        <link rel="stylesheet" href="../shared/additional.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="https://i.pinimg.com/564x/e1/d1/7d/e1d17d8b51f6bbde73947ec16e0a0e91.jpg">
+        <style>*
+          *::after,
+          *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+          }
+        
+          img {
+            margin-left:auto;
+            margin-right:auto; 
+            display: block;
+          }	
+        
+          body,
+          html {
+            width: 100%;
+            height: 84%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+          }
+          .container {
+            padding: 20px;
+            max-width: 350px;
+            width: 95%;
+            margin: 0 auto;
+          }
+          .container .header {
+            text-align: left;
+          }
+          .container .header h1 {
+            margin-top: 30px;
+          }
+        
+          .container form .form-group {
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+          .container form .inputField {
+            height: 55px;
+            border-radius: 4px;
+            border: 2px solid rgb(29, 161, 242);
+            padding: 10px 10px 0;
+            width: 100%;
+            box-shadow: none;
+            outline: none;
+            font-size: 14px;
+          }
+          .container form label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translate(0, -50%);
+            transition: all 0.3s;
+          }
+          .container form .inputField:focus + label,
+          .container form .inputField:valid + label {
+            transform: translate(0, -125%);
+          }
+          button.submitButton {
+            width: 100%;
+            height: 40px;
+            outline: none;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid rgb(29, 161,242);
+            border-radius: 30px;
+            background: rgb(29, 161, 242);
+            cursor: pointer;
+            transition: all 0.3s;
+          }
+          button.submitButton:hover {
+            opacity: 0.7;
+          }
+          .footer {
+            color: rgb(29, 161, 242);
+            margin-top: 30px;
+          }
+          .footer a {
+            color: rgb(29, 161, 242);
+            text-decoration: none;
+          }
+          .footer span {
+            padding: 10px;
+          }
+
+          
+
+     
+
+#powered-by {
+  position: fixed;
+  bottom: 1px;
+  right: 2px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  padding: 5px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  
+}
+
+
+</style>
+</style>
+<style>
+.loader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #333333;
+transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden {
+opacity: 0;
+visibility: hidden;
+}
+
+.loader::after {
+content: "";
+width: 75px;
+height: 75px;
+border: 3px solid #dddddd;
+border-top-color: rgb(0, 0, 255);
+border-radius: 50%;
+animation: loading 1.2s ease infinite;
+}
+
+@keyframes loading {
+from {
+transform: rotate(0turn);
+}
+to {
+transform: rotate(1turn);
+}
+}
+</style>
+          
+          </style>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="120" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            <form action="#" method="post" autocomplete="off">
+              {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" id="username" required class="inputField" autocomplete="off" >
+                    <label for="username">Enter Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="password" required class="inputField" autocomplete="off" >
+                    <label for="password">Enter Your Password</label>
+                </div>
+                <button type="submit" class="submitButton">Submit</button><hr>
+                <a href="http://127.0.0.1:8000/"  class="btn btn-success" >للانتقال للصفحه الرئيسيه <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                </svg></a>
+            </form>
+
+        </div>
+        <div id="powered-by">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+              <path d="M7.5 1v7h1V1h-1z"/>
+              <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+            </svg> Powered by Yosif </div>
+        <div class="loader"></div>
+        <script>
+          window.addEventListener("load", () => {
+      const loader = document.querySelector(".loader");
+    
+      loader.classList.add("loader--hidden");
+    
+      loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+      });
+    });
+        </script>
+    </body>
+
+
+</html>
